@@ -1,0 +1,416 @@
+
+@font-face {
+    font-family: myfontlight;
+    src: url(font/GTWalsheim-Light.woff);
+}
+
+@font-face {
+    font-family: myfontmed;
+    src: url(font/GTWalsheim-Medium.woff);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-image: url(images/bg.png);
+    width: 100%;
+}
+
+.search-container{
+    width: 100%;
+    background-size: cover;
+}
+
+.main-bar input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: myfontlight;
+    color: #ffffff;
+}
+
+.side-bar-images img {
+    background: linear-gradient(90deg, #c1e1fa, #f1d3fd);
+}
+
+form {
+    border: 1px solid gray;
+    padding: .5rem 1rem;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: .3rem;
+}
+
+.profile-heading {
+    color: #ffffff;
+    font-family: myfontmed;
+    white-space: normal;
+    display: block;
+}
+
+.bio-text {
+    color: #ffffff;
+    font-family: myfontlight;
+    font-size: .9rem;
+}
+
+.followings p {
+    color: #ffffff;
+    font-family: myfontmed;
+}
+
+.profile-sub {
+    color: #ffffff;
+    font-family: myfontlight;
+    font-size: .7rem;
+    width: 100%;
+}
+
+.popular-repo h1,
+.popular-repo h3 {
+    color: #fff;
+    font-family: myfontmed;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.repolanguage,
+.forkcount,
+.starcount {
+    background: linear-gradient(90deg, #c1e1fa, #f1d3fd);
+    font-family: myfontlight;
+    display: flex;
+    align-items: center;
+    padding: .2rem .5rem;
+    font-size: .7rem;
+    border-radius: .3rem;
+}
+
+.repocontainer {
+    background-color: #000000;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+}
+
+.repomaincontent {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+
+.follower-text,
+.following-text,
+.public-repo-text{
+    position: relative;
+    align-items: center;
+}
+
+.follower-text::after{
+    content: 'follower';
+    font-family: myfontlight;
+    font-size: .7rem;
+    position: absolute;
+
+}
+
+.following-text::after{
+    content: 'following';
+    font-family: myfontlight;
+    font-size: .7rem;
+    position: absolute;
+}
+
+.public-repo-text::after{
+    content: 'Repositories';
+    font-family: myfontlight;
+    font-size: .7rem;
+    position: absolute;
+    bottom: -30px;
+    left: -12px;
+}
+
+.bio-text {
+    position: relative;
+}
+
+.bio-text::before{
+    content: '';
+    position: absolute;
+    background-image: url(svg/quote.svg);
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    width: 30px; 
+    height: 30px; 
+    left: -10px;
+    top: -10px;
+}
+
+.followings {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (min-width:760px) {
+    .side-bar {
+        width: 19%;
+        display: flex;
+        justify-content: center;
+        background-color: #00000048;
+        height: 100vh;
+        padding-top: 2.5rem;
+    }
+    
+    .main-bar{
+        width: 81%;
+        padding-top: 2rem;
+        padding-left: 4rem;
+    }
+
+    .side-bar-images {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 7rem;
+    }
+
+    .side-bar-images img {
+        width: 22%;
+        padding: 1rem;
+        border-radius: .5rem;
+    }
+
+    .search-container{
+        display: flex;
+    }
+    
+    form {
+        width: 250px;
+    }
+
+    .flex-lg{
+        display: flex;
+    }
+
+    .main-bar-2 {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        gap: 8rem;
+        padding-top: 3rem;
+    }
+
+    .main-bar-2 > div {
+        flex: 1;
+        max-width: 33.3%; 
+        box-sizing: border-box; 
+    }
+
+    .profile-name{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        width: 100%;
+        border-radius: 1.2rem;
+        border: 2px solid #fff;
+    }
+
+    .following-main-container {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .following-text {
+        padding: 0rem 1.5rem;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+    }
+    
+    .follower-text::after{
+        position: absolute;
+        bottom: -30px;
+        left: -12px;
+    }
+    
+    .following-text::after{
+        position: absolute;
+        bottom: -30px;
+        left: 8px;
+    }
+
+
+    .profile-detail {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .summary{
+        display: flex;
+        align-items: center;
+    }
+
+    .repository {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .profile-img img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem; 
+        border: 2px solid #fff; 
+        object-fit: cover; 
+    }
+    
+    .profile-img {
+        width: 180px; 
+        height: 180px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    
+}
+
+@media screen and (max-width:760px) {
+    .side-bar-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem .8rem 1rem 1rem;
+        border-bottom: 1px solid gray;
+    }
+
+    .logo img {
+        width: 70%;
+        padding-top: .3rem;
+    }
+
+    .side-bar-images img {
+        width: 50%;
+        padding: .3rem;
+        border-radius: .4rem;
+    }
+
+    .side-bar-images {
+        display: flex;
+        flex-direction: row;
+        gap: .8rem;
+    }
+
+    form {
+        width: 180px;
+    }
+
+    form input {
+        width: 200px;
+    }
+
+    .main-bar {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        align-items: center;
+    }
+
+    .profile-detail {
+        display: flex;
+        flex-direction: column;
+        padding: .2rem 1rem;
+    }
+
+    .main-bar-2 {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 3rem;
+        padding-top: 3rem;
+    }
+
+    .summary {
+        display: flex;
+        justify-content: center;
+        padding: 0rem 3rem 0rem 3rem;
+    }
+
+    .following-main-container {
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .followings {
+        justify-content: center;
+    }
+
+    .profile-img img {
+        width: 60%;
+        height: auto;
+        border-radius: 1rem; 
+        border: 2px solid #fff; 
+        object-fit: cover; 
+    }
+    
+    .profile-img {
+        width: 100%; 
+        height: 100%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popular-repo-text h1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-heading,
+    .profile-sub {
+        display: flex;
+        justify-content: center;
+    }
+
+    .repository {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        padding: 0rem 2rem;
+    }
+
+    .follower-text::after{
+        bottom: -30px;
+        left: -12px;
+    }
+    
+    .following-text::after{
+        bottom: -30px;
+        left: -12px;
+    }
+
+    .main-bar-1 {
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+}
